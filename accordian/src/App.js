@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Accordian from "./Accordian";
+import "./App.css";
+import "./Accordian.css";
+import questions from "./data";
 
 function App() {
+  const [openId, setOpenId] = useState(null);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="accordian">
+      {questions.map((item) => (
+        <Accordian
+          key={item.id}
+          {...item}
+          openId={openId}
+          setOpenId={setOpenId}
+          isOpen={openId===item.id}
+        />
+      ))}
     </div>
   );
 }
