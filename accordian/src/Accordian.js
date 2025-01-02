@@ -1,13 +1,10 @@
 import React from "react";
 import "./Accordian.css";
 
-const Accordian = ({ id, info, title, openId, setOpenId, isOpen }) => {
-  const handleToggle = (id) => {
-    id === openId ? setOpenId(null) : setOpenId(id);
-  };
+const Accordian = ({ id, info, title, isOpen, handleToggle }) => {
   return (
     <div className="AccordianItem">
-      <div className="AccordianHeader" onClick={() => handleToggle(id)}>
+      <div className="AccordianHeader" onClick={handleToggle}>
         <h2>{title}</h2>
         <span style={{ cursor: "pointer" }}>
           {isOpen ? <strong>-</strong> : <strong>+</strong>}

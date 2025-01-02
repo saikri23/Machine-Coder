@@ -1,5 +1,4 @@
 .AccordianItem {
-  width: 50%;
 }
 
 .AccordianHeader {
@@ -12,7 +11,8 @@
 }
 
 .accordian {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 50%;
+  margin: auto;
+  border: 4px solid black;
+  padding: 20px;
 }
