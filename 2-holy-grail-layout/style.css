@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header,
+footer {
+  background-color: gray;
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+
+.container {
+  flex: 1;
+  display: flex;
+}
+
+.main-container {
+  flex: 1;
+  text-align: center;
+}
+
+aside {
+  padding: 30px;
+}
+
+.left-container {
+  background-color: lightpink;
+}
+
+.right-container {
+  background-color: lightblue;
+}
+
+@media only screen and (max-width: 480px) {
+  .container {
+    flex-direction: column;
+  }
+}
