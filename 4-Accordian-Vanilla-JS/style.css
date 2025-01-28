@@ -1,0 +1,22 @@
+body {
+  font-family: sans-serif;
+}
+
+.acc-container {
+  border: 1px solid #ccc;
+}
+
+.acc-item {
+  border: 1px solid #ccc;
+  padding: 5px;
+}
+.acc-header {
+  background-color: #f5f5f5;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.acc-content {
+  display: none;
+  padding: 10px;
+}
