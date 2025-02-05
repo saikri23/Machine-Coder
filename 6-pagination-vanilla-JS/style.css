@@ -1,0 +1,40 @@
+.product {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 5px;
+  margin: 20px;
+  padding: 0;
+}
+
+.product_single {
+  height: 250px;
+  padding: 20px;
+  background-color: antiquewhite;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.product_single > img {
+  width: 100%;
+  height: 95%;
+  object-fit: cover;
+}
+
+.pagintion {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  padding: 10px;
+}
+
+.pagintion > button {
+  padding: 15px 20px;
+  border: 1px solid gray;
+  cursor: pointer;
+  margin: 2px;
+  border-radius: 5px;
+}
+
+.selected {
+  background-color: grey;
+}
