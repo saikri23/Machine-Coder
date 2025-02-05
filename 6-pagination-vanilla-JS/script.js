@@ -22,6 +22,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const pagination = document.createElement("div");
     pagination.classList.add("pagintion");
 
+    pagination.addEventListener("click", (event) => {
+      console.log(event);
+      let target = event.target;
+      if (target.nodeName === "BUTTON") {
+        if (target.innerText === "◀️") {
+          selectPageHandler(page - 1);
+        } else if (target.innerText === "▶️") {
+          selectPageHandler(page + 1);
+        } else {
+          selectPageHandler(+target.innerText);
+        }
+      }
+    });
+
     if (products.length > 0) {
       products.slice(page * 10 - 10, page * 10).forEach((product) => {
         const prodElement = document.createElement("div");
@@ -34,27 +48,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
       //Previous button
       if (page > 1) {
-        const pvsBtn = createPaginationButton("◀️", () =>
-          selectPageHandler(page - 1)
-        );
+        const pvsBtn = createPaginationButton("◀️");
         pagination.appendChild(pvsBtn);
       }
 
       //Pagination buttons
       for (let i = 0; i < products.length / 10; i++) {
-        const paginationBtn = createPaginationButton(
-          i + 1,
-          () => selectPageHandler(i + 1),
-          page === i + 1
-        );
+        const paginationBtn = createPaginationButton(i + 1, page === i + 1);
         pagination.appendChild(paginationBtn);
       }
 
       //next button
       if (page < products.length / 10) {
-        const nxtBtn = createPaginationButton("▶️", () =>
-          selectPageHandler(page + 1)
-        );
+        const nxtBtn = createPaginationButton("▶️");
         pagination.appendChild(nxtBtn);
       }
     }
@@ -63,14 +69,12 @@ document.addEventListener("DOMContentLoaded", () => {
     app.append(pagination);
   }
 
-  const createPaginationButton = (text, clickHandler, isSelected = false) => {
+  const createPaginationButton = (text, isSelected = false) => {
     const btn = document.createElement("button");
     btn.textContent = text;
     if (isSelected) {
       btn.classList.add("selected");
     }
-
-    btn.addEventListener("click", clickHandler);
     return btn;
   };
   const selectPageHandler = (selectedPage) => {
