@@ -1,0 +1,35 @@
+.carousel-cont {
+  height: 40vh;
+  width: 50vh;
+}
+
+.carousel {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+
+.img-cont {
+  display: flex;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.pvs {
+  left: 0;
+}
+
+.nxt {
+  right: 0;
+}
