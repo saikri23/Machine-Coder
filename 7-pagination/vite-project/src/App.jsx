@@ -4,21 +4,25 @@ import "./App.css";
 function App() {
   const [products, setProducts] = useState([]);
   const [page, setPage] = useState(1);
-  const totalPages = Math.ceil(products.length / 10);
+  const [totalPages, setTotalPages] = useState();
 
   const fetchProducts = async () => {
-    let res = await fetch("https://dummyjson.com/products?limit=100");
+    let res = await fetch(
+      `https://dummyjson.com/products?limit=10&skip=${(page - 1) * 10}`
+    );
     let data = await res.json();
 
     if (data && data.products) {
       setProducts(data.products);
+      setTotalPages(Math.ceil(data.total / 10));
       console.log(products);
     }
   };
 
   useEffect(() => {
     fetchProducts();
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [page]);
 
   const handlePageSelect = (selectedPage) => {
     if (
@@ -34,7 +38,7 @@ function App() {
     <div>
       {products.length > 0 && (
         <div className="products">
-          {products.slice(page * 10 - 10, page * 10).map((prod) => {
+          {products.map((prod) => {
             return (
               <span key={prod.id} className="products__single">
                 <img src={prod.thumbnail} alt={prod.title} />
@@ -47,7 +51,7 @@ function App() {
 
       <div className="pagination">
         <span
-          className={page === 1 ? "disable" : 0}
+          className={page === 1 ? "disable" : ""}
           onClick={() => handlePageSelect(page - 1)}
         >
           ◀️

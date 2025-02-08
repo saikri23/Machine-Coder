@@ -20,13 +20,12 @@
 
 .pagination {
   padding: 10px;
-  margin: 10px 0;
-  display: flex;
-  justify-items: center;
+  margin: 20px 0;
+  text-align: center;
 }
 
 .pagination > span {
-  padding: 15px 20px;
+  padding: 5px;
   border: 1px solid gray;
   cursor: pointer;
 }
