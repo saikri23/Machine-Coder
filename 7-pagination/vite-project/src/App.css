@@ -15,7 +15,7 @@
 .products__single > img {
   height: 95%;
   width: 100%;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .pagination {
@@ -35,6 +35,6 @@
 }
 
 .pagination .disable {
-  background-color: rgb(220, 220, 220);
-  cursor: not-allowed;
+  opacity: 0.5;
+  pointer-events: none;
 }

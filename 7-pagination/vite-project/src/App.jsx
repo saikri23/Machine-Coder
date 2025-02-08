@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
+import Pagination from "./components/Pagination";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -49,29 +50,11 @@ function App() {
         </div>
       )}
 
-      <div className="pagination">
-        <span
-          className={page === 1 ? "disable" : ""}
-          onClick={() => handlePageSelect(page - 1)}
-        >
-          ◀️
-        </span>
-        {[...Array(totalPages)].map((_, index) => (
-          <span
-            key={index}
-            className={page === index + 1 ? "selected" : ""}
-            onClick={() => handlePageSelect(index + 1)}
-          >
-            {index + 1}
-          </span>
-        ))}
-        <span
-          className={page === totalPages ? "disable" : 0}
-          onClick={() => handlePageSelect(page + 1)}
-        >
-          ▶️
-        </span>
-      </div>
+      <Pagination
+        page={page}
+        handlePageSelect={handlePageSelect}
+        totalPages={totalPages}
+      />
     </div>
   );
 }
