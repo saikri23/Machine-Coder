@@ -1,0 +1,16 @@
+body {
+  background-color: black;
+  color: antiquewhite;
+}
+
+.star {
+  font-size: 38px;
+}
+
+.hover {
+  color: gold;
+}
+
+.active {
+  color: orange;
+}
