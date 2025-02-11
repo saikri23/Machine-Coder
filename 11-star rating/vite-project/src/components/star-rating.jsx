@@ -14,7 +14,7 @@ const StarRater = ({ rating = 0, onChange = () => {}, size = 0 }) => {
         .map((_, idx) => {
           let starVal = idx + 1;
           let starClass = "star";
-          // Here hover is given more priority 
+          // Here hover is given more priority
           if (hoverRating >= starVal) {
             starClass += " hover";
           } else if (rating >= starVal) {
