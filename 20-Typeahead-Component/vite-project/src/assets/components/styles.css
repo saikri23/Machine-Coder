@@ -1,0 +1,44 @@
+.autoComplete-cont {
+  width: 400px;
+  position: relative;
+}
+
+.autocomplete-input {
+  width: inherit;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+.suggestions-list {
+  position: absolute;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  background: #fff;
+  z-index: 10;
+  max-height: 150px;
+  overflow-y: auto;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Suggestion item */
+.suggestion-item {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.suggestion-item:hover,
+.suggestion-item[aria-selected="true"] {
+  background-color: #f0f0f0;
+}
+
+/* Highlighted text in suggestion */
+.suggestion-item b {
+  color: #007bff;
+}
