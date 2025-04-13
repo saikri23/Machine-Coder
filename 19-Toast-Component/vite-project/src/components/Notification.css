@@ -1,0 +1,108 @@
+.notification {
+  width: 350px;
+  height: 50px;
+  color: white;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  padding-left: 5px;
+}
+
+.notification-cont {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.success {
+  background-color: green;
+}
+
+.info {
+  background-color: orange;
+}
+
+.error {
+  background-color: red;
+}
+
+.warning {
+  background-color: yellow;
+}
+
+.top-left {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+}
+
+.top-right {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+}
+
+.bottom-left {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+}
+
+.bottom-right {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+}
+
+.close {
+  color: white;
+  background-color: inherit;
+  outline: none;
+  border: none;
+  flex: 1;
+  cursor: pointer;
+}
+
+.bottom {
+  flex-direction: column-reverse;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes popup {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.fadeIn {
+  animation: fadeIn 0.5s;
+}
+.popup {
+  animation: popup 0.5s ease-out;
+}
+.slideIn {
+  animation: slideIn 0.5s ease-out;
+}

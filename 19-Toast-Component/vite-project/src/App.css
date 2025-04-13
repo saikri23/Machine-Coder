@@ -1,0 +1,15 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.toast {
+  width: 200px;
+  height: 50px;
+  margin: 5px;
+  background-color: beige;
+  color: black;
+  font-weight: bolder;
+}
